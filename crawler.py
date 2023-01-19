@@ -1,10 +1,10 @@
 import requests
 import json
 import pandas as pd
-import glob
+import pickle
 from multiprocessing import Pool
 
-api_key = "API-KEY"
+api_key = "AIzaSyBOHtJiWW9K3kTj9co0PZQQV23CWgiyYc0"
 
 
 def get_info(params):
@@ -58,25 +58,19 @@ def get_chunks(seq, size):
             for pos in range(0, len(seq), size))
 
 
-videos = glob.glob("data/video*.csv.gz")
-videos = [video[11:-7] for video in videos]
-channels = glob.glob("data/channel*.csv.gz")
-channels = [channel[13:-7] for channel in channels]
+finished_videos = []
+with open("completed_videos.pkl", "rb") as f:
+    finished_videos = pickle.load(f)
 
-with open("logs/not_found", "r") as f:
-    not_found = f.read()
-
-not_found = not_found.split("\n")
-for line in not_found:
-    if "video" in line:
-        videos.append(line.split()[-1])
-    elif "channel" in line:
-        channels.append(line.split()[-1])
+finished_channels = []
+with open("completed_channels.pkl", "rb") as f:
+    finished_channels = pickle.load(f)
 
 
 def main():
     df = pd.read_csv("YouTubeDataset_withChannelElapsed.csv")
-    values = [list(x) for x in zip(set(df.videoId.values) - set(videos), set(df.channelId.values) - set(channels))]
+    values = [list(x) for x in zip(set(df.videoId.values) - set(finished_videos),
+                                   set(df.channelId.values) - set(finished_channels))]
     for params_list in get_chunks(values, 10):
         pool = Pool(processes=len(params_list))
         pool.map(get_info, params_list)
