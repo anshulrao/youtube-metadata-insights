@@ -4,7 +4,7 @@ import pandas as pd
 import pickle
 from multiprocessing import Pool
 
-api_key = "AIzaSyBOHtJiWW9K3kTj9co0PZQQV23CWgiyYc0"
+api_key = "API-KEY"
 
 
 def get_info(params):
