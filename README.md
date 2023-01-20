@@ -40,24 +40,37 @@ Index(['totalviews/channelelapsedtime', 'channelId',
 **Extra Columns Appended to Original Data:**
 
 ```
-'published_dt', 
+'published_dt', --> videoPublished
 'title',
 'description', 
 'channel_title', 
-'category', 
+'category', --> videoCategoryId
 'duration', 
 'definition',
 'caption', 
 'licensed_content',
 'content_rating',
-'view_cnt', 'like_cnt',
-'comment_cnt',
+'view_cnt', --> videoViewCount
+'like_cnt', --> videoLikeCount
+'comment_cnt', --> VideoCommentCount
 'privacy_status',
 'made_for_kids',
 'channel_published_dt',
 'channel_description'
 ```
 
+[new] --> [original] point to the same fields. We will use the original version for these so that the data is comparable cross all.
+Only below new fields will be used.
+```
+'title',
+'description', 
+'channel_title', 
+'definition',
+'licensed_content',
+'made_for_kids',
+'channel_published_dt',
+'channel_description'
+```
 
 ## Observations
 * Both the videoId and channelId are unique in the dataset (can be key-ed) meaning no 
