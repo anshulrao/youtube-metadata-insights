@@ -59,8 +59,12 @@ Index(['totalviews/channelelapsedtime', 'channelId',
 'channel_description'
 ```
 
-[new] --> [original] point to the same fields. We will use the original version for these so that the data is comparable cross all.
+`[new] --> [original]` point to the same fields. 
+
+We will use the original version for these so that the data is comparable across all.
+
 Only below new fields will be used.
+
 ```
 'title',
 'description', 
