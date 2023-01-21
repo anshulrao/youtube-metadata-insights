@@ -3,77 +3,84 @@
 ## Data
 
 ```
-In [1]: df  = pd.read_csv("YouTubeDataset_withChannelElapsed.csv")
-In [2]: df.columns
-Out[2]: 
-Index(['totalviews/channelelapsedtime', 'channelId',
-       'videoCategoryId', 'channelViewCount', 'likes/subscriber',
-       'views/subscribers', 'videoCount', 'subscriberCount', 'videoId',
-       'dislikes/views', 'channelelapsedtime', 'comments/subscriber',
-       'likes/views', 'channelCommentCount', 'videoViewCount',
-       'likes/dislikes', 'comments/views', 'totvideos/videocount',
-       'elapsedtime', 'videoLikeCount', 'videoDislikeCount',
-       'dislikes/subscriber', 'totviews/totsubs', 'views/elapsedtime',
-       'videoPublished', 'VideoCommentCount'],
-      dtype='object')
+In [1]: import pandas as pd
 
-In [3]: df = pd.read_csv("YouTubeAppendedMetadata.csv.gz")
+In [2]: df = pd.read_csv("YouTubeDataset_withChannelElapsedAppended.csv.gz")
+
+In [3]: df.head()
+Out[3]: 
+       videoId                 channelId  totalviews/channelelapsedtime  ...  content_rating  privacy_status  made_for_kids
+0  --DwgB78t-c  UCdzU3DSGzyWzN2118yd9X9g                       0.165199  ...              {}          public          False
+1  --NZRkXBV7k  UC0UnhAG47DRyVZGVcbhAXhQ                       1.133820  ...              {}          public          False
+2  --hoQ2sGG4M  UCXjtAvK5P3wXBGh0vbGylzg                       0.668120  ...              {}          public          False
+3  --sBoaqBlzA  UCeKHMeUlcLNPLCLUfZUQI2w                      25.653505  ...             NaN             NaN            NaN
+4  R7BGibTDwUU  UCeKHMeUlcLNPLCLUfZUQI2w                      25.889071  ...             NaN             NaN            NaN
+
+[5 rows x 38 columns]
+
 In [4]: df.columns
 Out[4]: 
-Index(['totalviews/channelelapsedtime', 'channelId',
+Index(['videoId', 'channelId', 'totalviews/channelelapsedtime',
        'videoCategoryId', 'channelViewCount', 'likes/subscriber',
-       'views/subscribers', 'videoCount', 'subscriberCount', 'videoId',
-       'dislikes/views', 'channelelapsedtime', 'comments/subscriber',
-       'likes/views', 'channelCommentCount', 'videoViewCount',
-       'likes/dislikes', 'comments/views', 'totvideos/videocount',
-       'elapsedtime', 'videoLikeCount', 'videoDislikeCount',
-       'dislikes/subscriber', 'totviews/totsubs', 'views/elapsedtime',
-       'videoPublished', 'VideoCommentCount', 'published_dt', 'title',
-       'description', 'channel_title', 'category', 'duration', 'definition',
-       'caption', 'licensed_content', 'content_rating', 'view_cnt', 'like_cnt',
-       'comment_cnt', 'privacy_status', 'made_for_kids',
-       'channel_published_dt', 'channel_description'],
+       'views/subscribers', 'videoCount', 'subscriberCount', 'dislikes/views',
+       'channelelapsedtime', 'comments/subscriber', 'likes/views',
+       'channelCommentCount', 'videoViewCount', 'likes/dislikes',
+       'comments/views', 'totvideos/videocount', 'elapsedtime',
+       'videoLikeCount', 'videoDislikeCount', 'dislikes/subscriber',
+       'totviews/totsubs', 'views/elapsedtime', 'videoPublishedDate',
+       'videoCommentCount', 'channelPublishedDate', 'channelDescription',
+       'channelTitle', 'videoTitle', 'videoDescription', 'duration',
+       'definition', 'caption', 'licensed_content', 'content_rating',
+       'privacy_status', 'made_for_kids'],
       dtype='object')
 ```
 
-
-**Extra Columns Appended to Original Data:**
-
-```
-'published_dt', --> videoPublished
-'title',
-'description', 
-'channel_title', 
-'category', --> videoCategoryId
-'duration', 
-'definition',
-'caption', 
-'licensed_content',
-'content_rating',
-'view_cnt', --> videoViewCount
-'like_cnt', --> videoLikeCount
-'comment_cnt', --> VideoCommentCount
-'privacy_status',
-'made_for_kids',
-'channel_published_dt',
-'channel_description'
-```
-
-`[new] --> [original]` point to the same fields. 
-
-We will use the original version for these so that the data is comparable across all.
-
-Only below new fields will be used.
+**Original fields:**
 
 ```
-'title',
-'description', 
-'channel_title', 
-'definition',
-'licensed_content',
-'made_for_kids',
-'channel_published_dt',
-'channel_description'
+videoId                                                                --pQCGgGjE8
+channelId                                                 UCDUi7yW7tJ7QWJZgK8sRLLQ
+totalviews/channelelapsedtime                                            75.169324
+videoCategoryId                                                                 20
+channelViewCount                                                           6449528
+likes/subscriber                                                          0.002532
+views/subscribers                                                         0.240101
+videoCount                                                                    1010
+subscriberCount                                                               4344
+dislikes/views                                                                 0.0
+channelelapsedtime                                                           85800
+comments/subscriber                                                       0.000921
+likes/views                                                               0.010547
+channelCommentCount                                                           3654
+videoViewCount                                                                1043
+likes/dislikes                                                                -2.0
+comments/views                                                            0.003835
+totvideos/videocount                                                   6385.671287
+elapsedtime                                                                  75048
+videoLikeCount                                                                  11
+videoDislikeCount                                                                0
+dislikes/subscriber                                                            0.0
+totviews/totsubs                                                       1484.697974
+views/elapsedtime                                                         0.013898
+videoPublishedDate                                        2009-03-14T13:14:06.000Z
+videoCommentCount                                                                4
+```
+
+**Fields extracted using YouTube API:**
+
+```
+channelPublishedDate                                          2007-12-23T16:33:13Z
+channelDescription               Literally a place to play games I like just to...
+channelTitle                                                             AvielNova
+videoTitle                                       Kingdom Hearts- Behemoth (Expert)
+videoDescription                 Using Strike Raid to avoid it's attacks is gen...
+duration                                                                   PT3M32S
+definition                                                                      sd
+caption                                                                      False
+licensed_content                                                             False
+content_rating                                                                  {}
+privacy_status                                                              public
+made_for_kids                                                                False
 ```
 
 ## Observations
