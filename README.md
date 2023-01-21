@@ -88,7 +88,9 @@ made_for_kids                                                                Fal
 two videos are from the same channel.
 
 * Not all the videos in the dataset are live as of today, some of them have been removed. 
-For example, video id = **--_I8vffnIw** (https://www.youtube.com/watch?v=--_I8vffnIw)
+For example, video id = [--_I8vffnIw](https://www.youtube.com/watch?v=--_I8vffnIw)
+
+* Some description and titles are in languages other than English like Chinese.
 
 ## Links
 * [Kaggle Dataset](https://www.kaggle.com/datasets/thedevastator/revealing-insights-from-youtube-video-and-channe)
