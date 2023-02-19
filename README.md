@@ -1,4 +1,8 @@
-# YouTube Metadata
+# Unlocking Insights from YouTube Channel and Video Data
+
+[Please refer to the report [here](https://github.com/anshulrao/youtube-metadata-insights/blob/main/Report.pdf) for a more thorough dive into the 
+
+Team Members: Ethan Morgan and Anshul Rao
 
 ## Data
 
@@ -83,12 +87,6 @@ privacy_status                                                              publ
 made_for_kids                                                                False
 ```
 
-## Observations
-* Not all the videos in the dataset are live as of today, some of them have been removed. 
-For example, video id = [--_I8vffnIw](https://www.youtube.com/watch?v=--_I8vffnIw)
-
-* Some description and titles are in languages other than English like Chinese.
-
 ## Links
 * [Kaggle Dataset](https://www.kaggle.com/datasets/thedevastator/revealing-insights-from-youtube-video-and-channe)
-* [Complete Dataset](https://drive.google.com/drive/u/3/folders/1Bd2BMxADMkqq1JFwL5D-52XtAOt25Fdq)
+* [Jupyter Notebooks](https://drive.google.com/drive/folders/11ovYyLh CSDa72W_v-DtC3JbCp9RWqNvY?usp=share_li nk)
