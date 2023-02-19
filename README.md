@@ -1,6 +1,6 @@
 # Unlocking Insights from YouTube Channel and Video Data
 
-[Please refer to the report [here](https://github.com/anshulrao/youtube-metadata-insights/blob/main/Report.pdf) for a more thorough dive into the 
+[Please refer to the report [here](https://github.com/anshulrao/youtube-metadata-insights/blob/main/Report.pdf) for a more thorough dive into the project]
 
 Team Members: Ethan Morgan and Anshul Rao
 
