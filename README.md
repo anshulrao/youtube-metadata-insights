@@ -13,30 +13,14 @@ In [2]: df = pd.read_csv("YouTubeDataset_withChannelElapsedAppended.csv.gz")
 
 In [3]: df.head()
 Out[3]: 
-       videoId                 channelId  totalviews/channelelapsedtime  ...  content_rating  privacy_status  made_for_kids
-0  --DwgB78t-c  UCdzU3DSGzyWzN2118yd9X9g                       0.165199  ...              {}          public          False
-1  --NZRkXBV7k  UC0UnhAG47DRyVZGVcbhAXhQ                       1.133820  ...              {}          public          False
-2  --hoQ2sGG4M  UCXjtAvK5P3wXBGh0vbGylzg                       0.668120  ...              {}          public          False
-3  --sBoaqBlzA  UCeKHMeUlcLNPLCLUfZUQI2w                      25.653505  ...             NaN             NaN            NaN
-4  R7BGibTDwUU  UCeKHMeUlcLNPLCLUfZUQI2w                      25.889071  ...             NaN             NaN            NaN
+       videoId                 channelId  totalviews/channelelapsedtime  ...  made_for_kids
+0  --DwgB78t-c  UCdzU3DSGzyWzN2118yd9X9g                       0.165199  ...          False
+1  --NZRkXBV7k  UC0UnhAG47DRyVZGVcbhAXhQ                       1.133820  ...          False
+2  --hoQ2sGG4M  UCXjtAvK5P3wXBGh0vbGylzg                       0.668120  ...          False
+3  --sBoaqBlzA  UCeKHMeUlcLNPLCLUfZUQI2w                      25.653505  ...            NaN
+4  R7BGibTDwUU  UCeKHMeUlcLNPLCLUfZUQI2w                      25.889071  ...            NaN
 
 [5 rows x 38 columns]
-
-In [4]: df.columns
-Out[4]: 
-Index(['videoId', 'channelId', 'totalviews/channelelapsedtime',
-       'videoCategoryId', 'channelViewCount', 'likes/subscriber',
-       'views/subscribers', 'videoCount', 'subscriberCount', 'dislikes/views',
-       'channelelapsedtime', 'comments/subscriber', 'likes/views',
-       'channelCommentCount', 'videoViewCount', 'likes/dislikes',
-       'comments/views', 'totvideos/videocount', 'elapsedtime',
-       'videoLikeCount', 'videoDislikeCount', 'dislikes/subscriber',
-       'totviews/totsubs', 'views/elapsedtime', 'videoPublishedDate',
-       'videoCommentCount', 'channelPublishedDate', 'channelDescription',
-       'channelTitle', 'videoTitle', 'videoDescription', 'duration',
-       'definition', 'caption', 'licensed_content', 'content_rating',
-       'privacy_status', 'made_for_kids'],
-      dtype='object')
 ```
 
 **Original fields:**
@@ -89,4 +73,4 @@ made_for_kids                                                                Fal
 
 ## Links
 * [Kaggle Dataset](https://www.kaggle.com/datasets/thedevastator/revealing-insights-from-youtube-video-and-channe)
-* [Jupyter Notebooks](https://drive.google.com/drive/folders/11ovYyLh CSDa72W_v-DtC3JbCp9RWqNvY?usp=share_li nk)
+* [Jupyter Notebooks](https://drive.google.com/drive/folders/11ovYyLhCSDa72W_v-DtC3JbCp9RWqNvY?usp=share_link)
